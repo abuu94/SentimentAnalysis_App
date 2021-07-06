@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		
+		<title>Annual Sales - 2015</title>
+		
+		<!-- Bootstrap CSS -->
+		<!--<link rel="stylesheet" href="../assets/bootstrap/bootstrap4-alpha3.min.css">-->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap4-alpha3.min.css') }}">
+		
+		
+		<style>
+			body {
+				background-color: #fafafa;
+				font-size: 16px;
+				line-height: 1.5;
+			}
+			
+			h1,h2,h3,h4,h5,h6 {
+				font-weight: 400;	
+			}
+			
+			#header {
+				border-bottom: 5px solid #37474F;
+				color: #37474F;
+				margin-bottom: 1.5rem;
+				padding: 1rem 0;
+			}
+			
+			
+			
+			.card {
+				border: 0rem;
+				border-radius: 0rem;
+			}
+			
+			.card-header {
+				background-color: #37474F;
+				border-radius: 0 !important;
+				color:	white;
+				margin-bottom: 0;
+				padding:	1rem;
+			}
+			
+			.card-block {
+				border: 1px solid #cccccc;	
+			}
+			
+			.shadow {
+				box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+										0 1px 18px 0 rgba(0, 0, 0, 0.12),
+										0 3px 5px -1px rgba(0, 0, 0, 0.2);
+			}
+			
+			#revenue-column-chart {
+				height: 300px;
+				width: 100%;
+			}			
+		</style>
+		
+		<!-- Scripts za chini hazina kazi -->
+		<script src="assets/jquery/jquery-3.1.0.min.js"></script>
+		<script src="assets/tether/tether.min.js"></script>
+		<script src="assets/bootstrap/bootstrap4-alpha3.min.js"></script>
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	
+		
+		
+	</head>
+	<body>
+		<div class="container">
+			<h2 id="header">
+				<center><strong>Sentiment AnalysApplication</strong></center>
+			
+			</h2>
+			
+			<div class="row m-b-1">
+				<div class="col-xs-12">
+					<form action="{{ url_for('predict')}}" method="POST">
+					<div class="card shadow">
+						<center><h4 class="card-header">Enter Any Text for Analysing Sentiment </h4></center>
+						<div class="card-block">
+							<div id="revenue-column-chart">
+							
+								<textarea class="form-control"name="message" id="exampleFormControlTextarea1" rows="5"></textarea>
+								<br>
+								<!--<center><button type="submit" class="btn btn-warning">Warning</button></center>-->
+								<center><input type="submit" class="btn btn-warning" value="Analys"></center>
+							</div>
+							
+						</div>
+					</div>
+					</form>
+				</div>
+			</div> <!-- row -->
+			
+
+			
+		</div> <!-- container -->
+	</body>
+</html>
